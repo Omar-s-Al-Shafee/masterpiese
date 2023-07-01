@@ -1,0 +1,300 @@
+.profile-main{
+    flex-basis:73% ;
+
+}
+.profile-sidebar{
+    flex-basis:25% ;
+    align-self:flex-start ;
+    position:sticky ;
+    top: 3%;
+
+}
+.profile-container{
+    background:#fff ;
+}
+.profile-container-inner{
+    padding: 0 4% 10px;
+}
+.profile-pic{
+    width: 150px;
+    border-radius: 50%;
+    margin-top: -75px;
+    padding: 5px;
+    background: #fff;
+}
+.profile-container h1{
+    font-size: 28PX;
+    font-weight: 600;
+    color: #222;
+}
+.profile-container b{
+    font-weight: 500;
+
+}
+.profile-container p{
+    margin-top: 5px;
+}
+.profile-container p a{
+    color: #000000;
+    font-weight: 700;
+
+    
+}
+.mutual-connection{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.mutual-connection img{
+width: 30px;
+border-radius: 50%;
+margin-right:5px ;
+
+}
+.profile-btn{
+    margin: 20px 0;
+}
+.profile-btn a{
+    display: inline-flex;
+    align-items: center;
+    background: #e4e6eb;
+    /* border-radius: 4px; */
+    padding: 6px 15px;
+    margin-right:10px ;
+}
+.profile-btn a img{
+    width: 18px;
+    margin: 5px;
+}
+.profile-btn .primery-btn{
+    background: #000000;
+    color: #fff;
+}
+.profile-description{
+    background: #fff;
+    padding:20px 4% 30px;
+    margin: 12px 0;
+}
+.profile-description h2{
+    color: #333;
+    margin: 10px 0 20px;
+    font-weight: 600;
+}
+.editDescription{
+    display: flex;
+    justify-content: space-between;
+}
+.fas {
+    color: #000;
+}
+.fas  {
+    margin-right:10px ;
+}
+.see-more-link{
+    display: block;
+    text-align: right;
+    font-size: 15px;
+
+}
+.profile-desc-row{
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+.profile-desc-row img{
+    width: 50px;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+.profile-desc-row div{
+    width: 100%;
+}
+.profile-desc-row h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.profile-desc-row b{
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+}
+.profile-desc-row p{
+    margin-top: 15px;
+}
+.profile-desc-row hr{
+    border-bottom: 1px solid #999;
+    border: 0;
+    margin-top: 10px;
+
+}
+.experience-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    font-weight: 500;
+}
+.experience-link img{
+    width: 20px;
+    margin-right: 8px;
+}
+.skills-btn{
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 6px 18px;
+    border: 1px solid #777;
+    /* border-radius: 30px; */
+    font-size: 12px;
+    font-weight: 500;
+}
+.language-btn{
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 6px 18px;
+    background:#e4e6eb ;
+    font-size: 12px;
+    font-weight:500 ;
+}
+
+
+/* ---------------------profile-right-sidebar-------------- */
+
+.profile-sidebar .profile-ad{
+    margin: 0;
+}
+.sidebar-people{
+    background: #fff;
+    padding: 15px 25px;
+    margin: 12px 0;
+    font-size:12px ;
+}
+.sidebar-people h3{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10PX 0 20px;
+
+}
+.sidebar-people-row{
+    display: flex;
+    align-items: flex-start;
+    margin: 6px 0;
+}
+.sidebar-people-row img{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+.sidebar-people-row h2{
+    font-weight: 500;
+    font-size: 16px;
+}
+.sidebar-people-row a{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 25px;
+    border: 1px solid #5f5f5f;
+    /* border-radius: 30px; */
+    font-weight: 500;
+}
+.profile-footer {
+    padding: 0 6% 30px;
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: #000; */
+    color: #000;
+  }
+  
+  .profile-footer .sidebar-useful-links {
+    text-align: left;
+    padding: 0;
+  }
+  /* popup for profile page  */
+  /* popup for about */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    background-image:url(https://img.freepik.com/free-photo/plain-backdrop-decorative-gray-textured_1136-349.jpg?w=740&t=st=1687873119~exp=1687873719~hmac=89894cd55bbbb2a12280c47058e2eab98f06ab8b582df260c0abc80a59761c5c);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+    color: #fff;
+    /* overflow-y:scroll; */
+    height: auto;
+  }
+  .popup-content form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .close-btn {
+    display: block;
+    margin-top: -10px;
+    color: #fff;
+    font-size: 30px;
+    text-align: right;
+    
+  }
+  
+  .popup-content input{
+    height: 30px;
+    background-color: #222;
+    color: #fff;
+    padding: 0 10px;
+    border: none;
+  }
+  .popup-content input::placeholder{
+    color: #fff;
+  }
+  .popup-content textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+    background-color: #222;
+    color: #fff;
+    padding: 5px 0 0 10px;
+  }
+  .popup-content textarea::placeholder{
+    color: #fff;
+  }
+  .popup-content button {
+    background-color: #fff;
+    color: #222;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  .popup-content button:hover{
+    background-color: #222;
+    color: #fff;
+    box-shadow: #e4e6eb 5px 5px 5px 0px;
+  }
+  .fa-pen{
+    color: #fff;
+  }
