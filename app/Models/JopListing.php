@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class JopListing extends Model
 {
+    protected $table = 'jops_listings';
     protected $fillable = [
         'company_id', 'job_title', 'location', 'job_description', 'application_deadline',
     ];
@@ -22,3 +23,4 @@ class Job extends Model
         return $this->belongsTo(User::class);
     }
 }
+

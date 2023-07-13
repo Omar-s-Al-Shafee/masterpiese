@@ -54,21 +54,25 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="{{ route('layoutDash.index') }}" class="navbar-brand mx-4 mb-3">
+                <a href="{{ route('dashboard.layoutDash.index') }}" class="navbar-brand mx-4 mb-3">
                     <img src="{{ asset('images/logo-white.png') }}" id="logo" alt="">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="{{ asset('img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                        @if(auth()->check())
+                        @php
+                            $user = auth()->user();
+                        @endphp
+                        <img class="rounded-circle" src="{{ asset('storage/' . $user->img_profile) }}" alt="" style="width: 40px; height: 40px;">
+                    @endif                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">{{ $user->name }}</h6>
-                        <span><strong>{{ $education->field_of_study }}</strong> </span>
+                        {{-- <span><strong>{{ $education->field_of_study }}</strong> </span> --}}
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="{{ route('layoutDash.index') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{ route('dashboard.layoutDash.index') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-users me-2"></i>Users & Company</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -93,7 +97,7 @@
                             Universitys</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ route('universitydashboard.university') }}" class="nav-item nav-link"><i class="fas fa-university"></i>University</a>
-                            <a href="{{ route('majordashboard.major') }}" class="nav-item nav-link"><i class="fas fa-graduation-cap"></i></i>Majors</a>
+                            <a href="{{ route('majordashboard.major') }}" class="nav-item nav-link"><i class="fas fa-graduation-cap"></i>Majors</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -137,13 +141,17 @@
                     
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src=" {{  $user->img_profile}}" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">{{ $user->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="{{ route('admindashboard.profile admin') }}.html" class="dropdown-item">My Profile</a>
+                            <a href="{{ route('admin-profile.show') }}" class="dropdown-item">My Profile</a>
+
                             @if(Auth::check())
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                             @endif
                         </div>
                     </div>

@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ route('images/logo2.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('images/logo2.png') }}" type="image/png">
     <title>ISLA</title>
-    <link rel="stylesheet" href="{{ asset('homePage.css') }}">
-    <link rel="stylesheet" href="{{ asset('profilePage.css') }}">
-    <link rel="stylesheet" href="{{ asset('peopleProfile.css') }}">
-    <link rel="stylesheet" href="{{asset('jopsProfile.css') }}">
-    <link rel="stylesheet" href="{{ asset('contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('company-profile.css') }}">
-    <link rel="stylesheet" href="{{ asset('commint.css') }}">
+    <link rel="stylesheet" href="{{ asset('homePage.css') }}" >
+<link rel="stylesheet" href="{{ asset('profilePage.css') }}" >
+<link rel="stylesheet" href="{{ asset('peopleProfile.css') }}" >
+<link rel="stylesheet" href="{{ asset('jopsProfile.css') }}">
+<link rel="stylesheet" href="{{ asset('contact.css') }}" >
+<link rel="stylesheet" href="{{ asset('company-profile.css') }}">
+<link rel="stylesheet" href="{{ asset('commint.css') }}" >
+
 </head>
 <body>
     
@@ -22,8 +23,10 @@
             <a href="{{ route ('homepage')}}" class="navbar-logo"><img src="{{ asset('images/logo.png') }}" ></a>
 
             <div class="searsh-box">
-                <img src="{{ asset ('images/search.png')}}" alt="">
-                <input type="text" placeholder="searsh">
+                @if(Route::currentRouteName() !== 'jops-profile')
+                    <img src="{{ asset('images/search.png') }}" alt="">
+                    <input type="text" placeholder="search">
+                @endif
             </div>
 
         </div>
@@ -31,13 +34,13 @@
             <ul>
                 <li><a href="{{ route('homepage') }}" class="active-link"><img src="{{ asset ('images/home.png')}}" ><span>Home</span></a></li>
                 
-                <li><a href="{{ route('peopleProfile') }}"><img src="{{ asset('images/network.png') }}" ><span>My Network</span></a></li>
+                <li><a href="{{ route('peopleProfile') }}"><img src="{{ asset('images/network.png') }}"><span>My Network</span></a></li>
                 
                 <li><a href="{{ route('jops-profile') }}"><img src="{{ asset('images/jobs.png') }}" ><span>Jops</span></a></li>
                 
                 <li><a href="{{ route('page-notfound') }}"><img src="{{ asset('images/message.png') }}" ><span>Messaging</span></a></li>
                 
-                <li><a href="{{ route('') }}"><img src="{{ asset('images/notification.png') }}" ><span>Notification</span></a></li>
+                <li><a href=""><img src="{{ asset('images/notification.png') }}" ><span>Notification</span></a></li>
                 
             </ul>
         </div>
@@ -62,17 +65,17 @@
                     <p>Give Feedback</p>
                     <span>></span>
                 </a>
-                <a href="{{ route('') }}" class="profile-menu-link">
+                <a href="" class="profile-menu-link">
                     <img src="{{ asset('images/setting.png') }}" alt="">
                     <p>Setting & Privacy</p>
                     <span>></span>
                 </a>
-                <a href="{{ route('') }}" class="profile-menu-link">
+                <a href="" class="profile-menu-link">
                     <img src="{{ asset('images/help.png') }}" alt="">
                     <p>Help & Support</p>
                     <span>></span>
                 </a>
-                <a href="{{ route('') }}" class="profile-menu-link">
+                <a href="" class="profile-menu-link">
                     <img src="{{ asset('images/display.png') }}" alt="">
                     <p>Display & Accessiblity</p>
                     <span>></span>

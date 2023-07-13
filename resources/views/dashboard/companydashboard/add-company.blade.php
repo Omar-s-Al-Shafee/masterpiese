@@ -10,7 +10,7 @@
                 <div class="form-company1">
                     <div class="input-company">
                         <div class="input-box">
-                            <input type="text" id="name" name="name" required="required" />
+                            <input type="text" id="company_name" name="company_name" required="required" />
                             <span>Name</span>
                             <i></i>
                         </div>
@@ -48,7 +48,7 @@
                         </div>
                         <div id="country-error" class="error-message"></div>
                         <div class="input-box">
-                            <input type="password" name="major" id="major" required="required" />
+                            <input type="text" name="major" id="major" required="required" />
                             <span>Major</span>
                             <i></i>
                         </div>

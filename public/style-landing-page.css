@@ -697,13 +697,14 @@ border-radius:50% 0 0 50% ;
 /* start footer */
 footer{
     margin-top: 40px;
-    position: relative;
+    position: fixed;
+    width: 100%;
     bottom: 0;
     left: 0;
 }
 .footer {
   width: 100%;
-  position: relative;
+  /* position: relative; */
   height: auto;
   background-color: #000;
   display: flex;

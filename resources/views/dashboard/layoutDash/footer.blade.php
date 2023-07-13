@@ -3,7 +3,7 @@
     <div class="bg-secondary rounded-top p-4">
         <div class="row">
             <div class="col-12 col-sm-6 text-center text-sm-start">
-                &copy; <a href=""{{ route('layoutDash.index') }}"">ISLA For Work</a>, All Right Reserved2023. 
+                &copy; <a href=""{{ route('dashboard.layoutDash.index') }}"">ISLA For Work</a>, All Right Reserved2023. 
             </div>
             
         </div>

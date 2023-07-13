@@ -1,14 +1,15 @@
 @extends('homePages.layoutHome.master')
+@section('homepage', 'homePage')
 @section('content')
     <!-- /* ------------- navbar end --------------------- */ -->
-    <div class="container">
+    <div class="containerhomePage">
         <!-- ----------left-sidebar------------- -->
         <div class="left-sidebar">
             <div class="sidebar-profile-box">
-                <img src="images/cover-pic.png" width="100%">
+                <img src="{{ asset($user->img_cover) }}" width="100%">
                 <div class="sidebar-profile-info">
-                    <img src="images/user-1.png" >
-                    <h1>omar al-shafee</h1>
+                    <img src="{{ asset($user->img_profile) }}">
+                    <h1>{{ $user->name }}</h1>
                     <h3>Web Developer at Microsoft</h3>
                     <ul>
                         <li>Your Profile Views <span>52</span></li>
@@ -50,209 +51,75 @@
 
             <div class="create-post">
                 <div class="create-post-input">
-                    <img src="images/user-1.png" >
-                    <textarea  rows="2" placeholder="Write a Post"></textarea>
+                    <img src="src="{{ $user->img_profile }}"" alt="Profile Image">
+                    <textarea rows="2" placeholder="Write a Post"></textarea>
                 </div>
                 <div class="create-post-links">
                     <li><img src="images/photo.png" alt="">Photo</li>
                     <li><img src="images/video.png" alt="">Video</li>
                     <li><img src="images/event.png" alt="">Event</li>
-                    <li>Post</li>
+                    <li><a href="#">Post</a></li>
                 </div>
             </div>
             <div class="sort-by">
                 <hr>
                 <p>Sort by: <span>top <img src="images/down-arrow.png" alt=""></span></p>
             </div>
-            <div class="post">
-                <div class="post-auther">
-                    <img src="images/user-1.png" alt="">
-                    <div>
-                        <h1>Omar Al-shafee</h1>
-                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
-                        <small>2 hours ago</small>
+            @foreach ($posts as $post)
+                <div class="post">
+                    <div class="post-author">
+                        <img src="{{ asset($user->img_profile) }}" width="50px" alt="">
+                        <div>
+                            <h1>{{ $post->user->name }}</h1>
+                            <small>{{ $post->user->position }}</small>
+                            <small>{{ $post->created_at->diffForHumans() }}</small>
+                        </div>
                     </div>
-                </div>
-                <p>The success of every websites depends on search engine optimisation and
-                    digital marketing strategy. If you are on first page of all major search engines
-                    then you are ahead among your competitors</p>
-                    <img src="images/post-image-1.png" width="100%">
+                    <p>{{ $post->content }}</p>
+                    @if ($post->image)
+                        <img src="{{ asset($post->image) }}" width="100%">
+                    @endif
 
                     <div class="post-stats">
                         <div>
-                            <img src="images/like.png" alt="">
-                            <img src="images/love.png" alt="">
-                            <img src="images/clap.png" alt="">
-                            <span class="liked-users">omar and 75others</span>
+                            <img src="{{ asset('images/like.png') }}" alt="">
+                            <img src="{{ asset('images/love.png') }}" alt="">
+                            <img src="{{ asset('images/clap.png') }}" alt="">
+                            <span class="liked-users">{{ $post->likes_count }} likes</span>
                         </div>
-                        <span>22 comments &middot; 40 shares</span>
+                        <span>{{ $post->comments_count }} comments &middot; 40 shares</span>
                     </div>
+
                     <div class="post-activity">
                         <div>
-                            
-                            <img src="images/user-2.png" alt="">
-                            <img src="images/user-3.png" alt="">
+                            <!-- Display users who liked the post -->
+                            @if ($post->likes)
+                                @foreach ($post->likes as $like)
+                                    <img src="{{ asset($like->user->img_profile) }}" alt="">
+                                @endforeach
+                            @endif
                         </div>
                         <div class="post-activity-link">
-                            <img src="images/thumbsup.png" alt="">
+                            <img src="{{ asset('images/thumbsup.png') }}" alt="">
                             <span>Like</span>
                         </div>
                         <div class="post-activity-link">
-                            <a href="commint.html"><img src="images/comment.png" alt="">
-                            <span>Comment</span></a>
+                            <a href="{{ $post->id ? route('comment', ['post_id' => $post->id]) : '#' }}">
+                                <img src="{{ asset('images/comment.png') }}" alt="">
+                                <span>Comment</span>
+                            </a>
                         </div>
                         <div class="post-activity-link">
-                            <img src="images/share.png" alt="">
+                            <img src="{{ asset('images/share.png') }}" alt="">
                             <span>Share</span>
                         </div>
                         <div class="post-activity-link">
-                            <img src="images/send.png" alt="">
+                            <img src="{{ asset('images/send.png') }}" alt="">
                             <span>Send</span>
                         </div>
-                    </div>
-            </div>
-            <div class="post">
-                <div class="post-auther">
-                    <img src="images/user-2.png" alt="">
-                    <div>
-                        <h1>Lorans Al—mansi</h1>
-                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
-                        <small>2 hours ago</small>
                     </div>
                 </div>
-                <p>The success of every websites depends on search engine optimisation and
-                    digital marketing strategy. If you are on first page of all major search engines
-                    then you are ahead among your competitors</p>
-                    <img src="images/post-image-2.png" width="100%">
-
-                    <div class="post-stats">
-                        <div>
-                            <img src="images/like.png" alt="">
-                            <img src="images/love.png" alt="">
-                            <img src="images/clap.png" alt="">
-                            <span class="liked-users">omar and 705others</span>
-                        </div>
-                        <span>220 comments &middot; 90 shares</span>
-                    </div>
-                    <div class="post-activity">
-                        <div>
-                            <img src="images/user-1.png" alt="">
-                            <img src="images/user-3.png" alt="">
-
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/thumbsup.png" alt="">
-                            <span>Like</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/comment.png" alt="">
-                            <span>Comment</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/share.png" alt="">
-                            <span>Share</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/send.png" alt="">
-                            <span>Send</span>
-                        </div>
-                    </div>
-            </div>
-            <div class="post">
-                <div class="post-auther">
-                    <img src="images/user-3.png" alt="">
-                    <div>
-                        <h1>Dana Al Kukhun</h1>
-                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
-                        <small>2 hours ago</small>
-                    </div>
-                </div>
-                <p>The success of every websites depends on search engine optimisation and
-                    digital marketing strategy. If you are on first page of all major search engines
-                    then you are ahead among your competitors</p>
-                    <img src="images/post-image-3.png" width="100%">
-
-                    <div class="post-stats">
-                        <div>
-                            <img src="images/like.png" alt="">
-                            <img src="images/love.png" alt="">
-                            <img src="images/clap.png" alt="">
-                            <span class="liked-users">omar and 75others</span>
-                        </div>
-                        <span>22 comments &middot; 40 shares</span>
-                    </div>
-                    <div class="post-activity">
-                        <div>
-                            <img src="images/user-2.png" alt="">
-                            <img src="images/user-4.png" alt="">
-
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/thumbsup.png" alt="">
-                            <span>Like</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/comment.png" alt="">
-                            <span>Comment</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/share.png" alt="">
-                            <span>Share</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/send.png" alt="">
-                            <span>Send</span>
-                        </div>
-                    </div>
-            </div>
-            <div class="post">
-                <div class="post-auther">
-                    <img src="images/user-5.png" alt="">
-                    <div>
-                        <h1>Osaid Ghnaimat</h1>
-                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
-                        <small>2 hours ago</small>
-                    </div>
-                </div>
-                <p>The success of every websites depends on search engine optimisation and
-                    digital marketing strategy. If you are on first page of all major search engines
-                    then you are ahead among your competitors</p>
-                    <img src="images/post-image-4.png" width="100%">
-
-                    <div class="post-stats">
-                        <div>
-                            <img src="images/like.png" alt="">
-                            <img src="images/love.png" alt="">
-                            <img src="images/clap.png" alt="">
-                            <span class="liked-users">omar and 75others</span>
-                        </div>
-                        <span>22 comments &middot; 40 shares</span>
-                    </div>
-                    <div class="post-activity">
-                        <div>
-                            <img src="images/user-1.png" alt="">
-                            <img src="images/user-3.png" alt="">
-
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/thumbsup.png" alt="">
-                            <span>Like</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/comment.png" alt="">
-                            <span>Comment</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/share.png" alt="">
-                            <span>Share</span>
-                        </div>
-                        <div class="post-activity-link">
-                            <img src="images/send.png" alt="">
-                            <span>Send</span>
-                        </div>
-                    </div>
-            </div>
-            
+            @endforeach
         </div>
         <!-- ---------------right-sidebar---------- -->
         <div class="right-sidebar">
@@ -261,25 +128,27 @@
                 
                 <h3>Trending News</h3>
                 
-                <a href="#">Higt demand for skilled manpower</a>
+                <a href="#">High demand for skilled manpower</a>
                 
-                <span>1h ago &middot;193 readers</span>
+                <span>1h ago &middot; 193 readers</span>
                 
                 <a href="#">Careers growing horizontally too</a>
                 
-                <span>5d ago &middot;15,824 readers</span>
+                <span>5d ago &middot; 15,824 readers</span>
                 
                 <a href="#">Less work visa for US, more for UK</a>
                 
-                <span>7d ago &middot;16,934 readers</span>
+                <span>7d ago &middot; 16,934 readers</span>
                 
                 <a href="#">More hiring = higher confidence?</a>
                 
-                <span>3d ago &middot;12,334 readers</span>
+                <span>3d ago &middot; 12,334 readers</span>
                 
                 <a href="#">Gautam Adani is the world's third richest</a>
                 
-                <span>6h ago &middot;934 readers</span>
+                <span>6h ago &middot; 934 readers</span>
+
+                
 
                 <a href="#" class="read-more-link">Read More</a>
 
@@ -288,7 +157,7 @@
                 <small>Ad &middot; &middot; &middot;</small>
                 <p>Master the 5 priciples of web design</p>
                 <div>
-                    <img src="images/user-1.png" >
+                    <img src="{{ asset($user->img_profile) }}" >
                     <img src="images/mi-logo.png" >
                 </div>
                 <p>Brand and Demand in Xiaomi</p>

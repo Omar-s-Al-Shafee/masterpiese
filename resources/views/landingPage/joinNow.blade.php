@@ -3,7 +3,8 @@
     <div class="container">
       <div class="box">
         <div class="form">
-          <form action="" method="post" onsubmit="return validateForm()">
+          <form action="{{ route('register') }}" method="post" onsubmit="return validateForm()">
+            @csrf
             <h2>Sign Up</h2>
             <div class="input-box">
               <span class="icon_login"></span>
@@ -36,7 +37,7 @@
             <div id="confirm-password-error" class="error-message"></div> 
             <div class="links">
               
-              <a href="sign in.html">Signin</a>
+              <a href="{{ route('signIn') }}">Signin</a>
             </div>
             <button type="submit" class="but-1">Signup</button>
         </form>

@@ -5,7 +5,7 @@
             <div class="box1">
                 <div class="box">
                   <div class="form">
-                    <form action=" {{ (route('userdashboard.update',$user->id)) }}" method="post" ">
+                    <form action="{{ route('userdashboard.update', $user->id) }}" method="post">
                       @csrf
                       @method('PUT')
                     <h3>Edit User</h3>

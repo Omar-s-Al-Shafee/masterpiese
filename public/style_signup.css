@@ -38,7 +38,7 @@ nav{
 .container{
   display: flex;
   justify-content: center;
-  height: 790px;
+  height: auto;
   align-items: center;
 }
 .navbar{
@@ -279,7 +279,6 @@ border-radius: 5px;
   position: relative;
   width: 400px;
   height: 550px;
-  /* border: 2px solid rgba(255, 255, 255, .5); */
  
   backdrop-filter: blur(1px);
   /* box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); */
@@ -287,7 +286,7 @@ border-radius: 5px;
   justify-content: center;
   align-items: center;
   /* margin-top: 50px; */
-  overflow: hidden;
+  /* overflow: hidden; */
   background: transparent;
   
 }

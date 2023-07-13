@@ -8,7 +8,7 @@
     <a href="#">More</a>
 
     <div class="copyright-msg">
-        <img src="images/logo-black.png" alt="" >
+        <img src="{{ asset('images/logo-black.png') }}" alt="" >
         <p> &#169; 2022.All right reserved</p>
 
     </div>

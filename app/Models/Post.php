@@ -1,13 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
+
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
     protected $fillable = [
-        'user_id', 'content',
+        'title',
+        'content',
+        'user_id',
     ];
 
     // Define the relationship with the User model
@@ -15,4 +18,9 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
+
 }

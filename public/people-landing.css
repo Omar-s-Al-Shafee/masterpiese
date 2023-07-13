@@ -179,6 +179,7 @@ border-radius: 5px;
   #search-form {
     display: flex;
     align-items: center;
+    background-color: #222;
   }
   
   #search-input {
@@ -188,7 +189,9 @@ border-radius: 5px;
     padding: 8px;
     outline: none;
   }
-  
+  #search-form img{
+    width: 30px;
+  }
   #search-button {
     background: transparent;
     border: 0;
@@ -225,7 +228,7 @@ border-radius: 5px;
     justify-content: center;
     align-items: center;
     height: auto;
-    margin-top: 220px;
+    margin-top: 20px;
 }
 /* search card */
 .card-search{    

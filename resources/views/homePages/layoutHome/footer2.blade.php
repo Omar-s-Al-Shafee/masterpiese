@@ -1,7 +1,7 @@
 <footer>
     <div class="footer">
         
-          <div class="footer-left"><img src="images/logo-white.png" ></div>
+          <div class="footer-left"><img src="{{ asset('images/logo-white.png') }}" ></div>
           <div class="footer-right"><p>&copy;Isla for jop 2023</p></div>
             
           
@@ -16,7 +16,7 @@
 </footer>
 
 
-<script src="jopsProfile.js"></script>
+<script src="{{ asset('jopsProfile.js') }}"></script>
 </body>
 </html>
 

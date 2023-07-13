@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ route('images/logo2.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('images/logo2.png') }}" type="image/png">
     <title>ISLA</title>
     <link rel="stylesheet" href="{{ asset('homePage.css') }}">
     <link rel="stylesheet" href="{{ asset('profilePage.css') }}">
@@ -22,12 +22,12 @@
             <a href="{{ route ('homepage')}}" class="navbar-logo"><img src="{{ asset('images/logo.png') }}" ></a>
 
             <div class="search-box">
-                <form id="search-form" onsubmit="showResults(); return false;">
-                    
-                  <input type="text" id="search-input" placeholder="Search">
-                  <button type="submit" id="search-button"><img src="images/search.png" alt=""></button>
+                <form id="search-form" action="{{ route('searchUsers') }}" method="post">
+                    @csrf
+                    <input type="text" id="search-input" name="search" placeholder="Search">
+                    <button type="submit" id="search-button"><img src="{{ asset('images/search.png') }}" alt="" style="width: 30px"></button>
                 </form>
-              </div>
+            </div>
 
         </div>
         <div class="navbar-center">
@@ -41,7 +41,7 @@
             <ul>
                 <li><a href="{{ route('homepage') }}" class="active-link"><img src="{{ asset ('images/home.png')}}" ><span>Home</span></a></li>
                 
-                <li><a href="{{ route('peopleProfile') }}"><img src="{{ asset('images/network.png') }}" ><span>My Network</span></a></li>
+                <li><a href="{{ route('peopleProfile') }}"><img src="{{ asset('images/network.png') }}"><span>My Network</span></a></li>
                 
                 <li><a href="{{ route('jops-profile') }}"><img src="{{ asset('images/jobs.png') }}" ><span>Jops</span></a></li>
                 
@@ -74,17 +74,17 @@
                     <p>Give Feedback</p>
                     <span>></span>
                 </a>
-                <a href="{{ route('') }}" class="profile-menu-link">
+                <a href="" class="profile-menu-link">
                     <img src="{{ asset('images/setting.png') }}" alt="">
                     <p>Setting & Privacy</p>
                     <span>></span>
                 </a>
-                <a href="{{ route('') }}" class="profile-menu-link">
+                <a href="" class="profile-menu-link">
                     <img src="{{ asset('images/help.png') }}" alt="">
                     <p>Help & Support</p>
                     <span>></span>
                 </a>
-                <a href="{{ route('') }}" class="profile-menu-link">
+                <a href="" class="profile-menu-link">
                     <img src="{{ asset('images/display.png') }}" alt="">
                     <p>Display & Accessiblity</p>
                     <span>></span>

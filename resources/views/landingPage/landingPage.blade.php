@@ -2,24 +2,25 @@
 @section('content')
     <div class="container">
         <div class="section-one">
-            <div class="section-one-left">
-                <h1>This Is Where Professionals Come Together To Connect And Grow.</h1>
-                <a href="sign in.html">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Sign In
-                  </a>
-                <h3>OR</h3>
-                <a href="sign up.html">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    New to Isla?Join Now
-                  </a>
-            </div>
+          <div class="section-one-left">
+            <h1>This Is Where Professionals Come Together To Connect And Grow.</h1>
+            <a href="{{ route('signIn') }}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Sign In
+            </a>
+            <h3>OR</h3>
+            <a href="{{ route('joinNow') }}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                New to Isla? Join Now
+            </a>
+        </div>
+        
             <div class="section-one-right">
                 <img src="images/person-office-analyzing-checking-finance-graphs.jpg" alt="">
             </div>
@@ -90,13 +91,13 @@
                   </a>
                   
                 </ul>
-                <a v-on:click="collapsed = !collapsed">
+                {{-- <a v-on:click="collapsed = !collapsed">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     {{ collapsed ? 'Show more' : 'Show less' }}
-                </a>
+                </a> --}}
               </div>
               
         </div>
@@ -104,7 +105,7 @@
 
 
         <!-- /* start section three */ -->
-        <div class="section-three">
+        {{-- <div class="section-three">
             <div class="section-three-left">
                 <p>Share your job opportunity
 with a vast network of potential
@@ -120,7 +121,7 @@ candidates.
                     Post a jop
                   </a>
             </div>
-        </div>
+        </div> --}}
 
         <!-- end section three -->
         
@@ -131,14 +132,14 @@ candidates.
             <div class="section-four-left">
                 <H2>Who is Isla for?</H2>
                 <p>Individuals who want to steer their professional life in the right direction.</p>
-                <a href="people-landing.html">
+                <a href="{{ route('people-landing') }}">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     Find a coworker or classmate
                 </a>
-                <a href="jops-landing.html">
+                <a href="{{ route('jops-landing') }}">
                     <span></span>
                     <span></span>
                     <span></span>

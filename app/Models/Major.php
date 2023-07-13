@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Major extends Model
 {
-    protected $table = 'major';
+    protected $table = 'majors';
 
     protected $fillable = ['name', 'university_id', 'image'];
 

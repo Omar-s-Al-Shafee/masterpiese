@@ -28,14 +28,14 @@
                     <td>{{ $major->university->name}}</td>
                     <td>{{ $major->name }}</td>
                     <td>
-                        <a href="{{ route('majordashboard.edit-major') }}">
+                        <a href="{{ route('majordashboard.edit-major',$major->id) }}">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                             Edit
                           </a>
-                          <form action="{{ route('$Companyashboard.destroy', $major->id) }}" method="post">
+                          <form class="form1" action="{{ route('majordashboard.destroy-major', $major->id) }}" method="post">
                             @csrf
                             @method('DELETE')
                               <button ">

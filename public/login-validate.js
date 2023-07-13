@@ -21,7 +21,7 @@ function validateForm() {
         passwordError.textContent = 'Please enter your password.';
         isValid = false;
     } else if (!validatePassword(passwordInput.value.trim())){
-      passwordError.textContent = 'Password must contain at least 8 characters, including at least one letter and one digit.';
+      passwordError.textContent = 'Password must contain at least 8 characters.';
       isValid = false;
 
     } else {
@@ -37,6 +37,6 @@ function validateEmail(email) {
     return emailPattern.test(email);
 }
 function validatePassword(password){
-const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+const passwordPattern = /^.{8,}$/;
 return passwordPattern.test(password);
 }

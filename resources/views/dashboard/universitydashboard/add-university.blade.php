@@ -4,23 +4,23 @@
 <div class="box1">
     <div class="box">
         <div class="form">
-            <form action="{{ route('dashboard.store') }}" method="post" onsubmit="validateUniversity()">
+            <form action="{{ route('universitydashboard.store') }}" method="post">
                 @csrf
                 <h3>Add University</h3>
                 <div class="input-box">
-                    <input type="text" id="name-university" name="name-university" required="required" />
+                    <input type="text" id="name-university" name="name_university" required="required" />
                     <span>Name University</span>
                     <i></i>
                 </div>
                 <div id="name-university-error" class="error-message"></div>
-                <div class="input-box">
+                <div class="input-box" style="margin-top: 10px">
                     <input type="text" id="location" name="location" required="required" />
                     <span>Location</span>
                     <i></i>
                 </div>
                 <div id="location-error" class="error-message"></div>
-                <div class="input-box">
-                    <input type="file" name="image" id="imageInput"  />
+                <div class="input-box" style="margin-top: 40px">
+                    <input type="file" name="image" id="image" />
                     <span>University Logo</span>
                     <i></i>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="links">
                     
                 </div>
-                <button type="submit" value="add-university" >Add University</button>
+                <button type="submit" value="add-university">Add University</button>
             </form>
         </div>
     </div>

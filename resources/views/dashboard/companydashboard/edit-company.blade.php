@@ -5,13 +5,13 @@
                 <div class="box-company">
                     <div class="form-company">
                         <h3>Edit Company</h3>
-                        <form  action="{{ route('companydashboard.update',$company->id) }}"  method="POST">
+                        <form  action="{{ route('companydashboard.update',$company->company_id) }}"  method="POST">
                           @csrf
                           @method('PUT')
                             <div class="form-company1">
                             <div class="input-company">
                                 <div class="input-box">
-                                <input type="text" id="name" name="name" value="{{ $company->name }}" required="required" />
+                                <input type="text" id="company_name" name="company_name" value="{{ $company->name }}" required="required" />
                                 <span>Name</span>
                                 <i></i>
                               </div>
@@ -23,14 +23,14 @@
                                 </div>
                               <div id="email-error" class="error-message"></div>
                               <div class="input-box">
-                                <input type="password" name="password" id="password" required="required" />
+                                <input type="password" name="password" id="password" value="{{ $company->password_confirmation }}" required="required" />
                                 <span>Password</span>
                                 <i></i>
                               </div>
                               <div id="password-error" class="error-message"></div>
                               <div class="input-box">
                                   <span class="icon_login"></span>
-                                  <input type="password" id="confirm-password"  name="confirm-password" required="required">
+                                  <input type="password" id="confirm-password"  name="confirm-password" value="{{ $company->password_confirmation }}" required="required">
                                   <span>Confirm Password</span>
                                   <i ></i>
                                 </div>
@@ -50,7 +50,7 @@
                                 </div>
                               <div id="country-error" class="error-message"></div>
                               <div class="input-box">
-                                <input type="password" name="major" id="major" required="required" />
+                                <input type="text" name="major" id="major" required="required" />
                                 <span>Major</span>
                                 <i></i>
                               </div>

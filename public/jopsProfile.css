@@ -19,6 +19,7 @@
         background: #000;
         padding: 6px 6%;
         position: sticky;
+        height: 70px;
         top: 0;
         z-index: 100;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -161,30 +162,38 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        height: 50px;
+        /* margin-top: 10px; */
         /* margin-left: 10px; */
       }#search-form{
         display: flex;
         align-items: center;
+        justify-content: center;
         margin-left: 10px;
       }
       
       .search-box {
         display: flex;
         align-items: center;
+        justify-content: center;
         background-color: #222;
         color: #fff;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
         margin-right: 20px;
       }
       .search-box img{
         width:30px ;
+        margin-top: 20px;
       }    
       #search-input {
         background: transparent;
         color: #fff;
         border: 0;
         padding: 8px;
+        padding-top: 30px;
         outline: none;
+        
       }
       
       #search-button {

@@ -1,4 +1,4 @@
-@include('homePages.layoutHome.header1')
+@include('homePages.layoutHome.header2')
 
 @yield('content')
 
